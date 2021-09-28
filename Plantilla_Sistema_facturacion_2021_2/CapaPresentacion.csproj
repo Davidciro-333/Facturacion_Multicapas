@@ -242,5 +242,11 @@
   <ItemGroup>
     <Content Include="cooperacion.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaLogicaDeNegocios\CapaLogicaDeNegocios.csproj">
+      <Project>{46d2995d-53c2-4b61-b41a-a082f994d862}</Project>
+      <Name>CapaLogicaDeNegocios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
