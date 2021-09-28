@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaAccesoDatos;
 
 namespace CapaLogicaDeNegocios
 {
-    public class cls_Parametros
+    class clsClientes
     {
 
-    }
-    public class Class1
-    {
     }
 }
