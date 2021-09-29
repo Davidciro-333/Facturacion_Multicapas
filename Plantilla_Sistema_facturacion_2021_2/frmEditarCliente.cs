@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using CapaLogicaDeNegocios;
 
 namespace Plantilla_Sistema_facturacion_2021_2
 {
-    public partial class frmEditarCliente : Form
+    public partial class frmEditarCliente : MaterialForm
     {
         public int IdCliente { get; set; }
         public string strCliente { get; set; }
@@ -19,6 +21,8 @@ namespace Plantilla_Sistema_facturacion_2021_2
         public string strDireccion { get; set; }
         public string strEmail { get; set; }
 
+        clsClientes clientes = new clsClientes();
+
         public frmEditarCliente()
         {
             InitializeComponent();
@@ -26,6 +30,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         private void frmEditarCliente_Load(object sender, EventArgs e)
         {
+            frmEditarCliente editarCliente = new frmEditarCliente();
             if (IdCliente == 0)
             {
                 //Registro nuevo
@@ -39,7 +44,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             {
                 //Actualizar registro con el ID pasado
 
-                lblEditarCliente.Text = "MODIFICAR CLIENTE";
+                lblEditarCliente.Text = "EDITAR CLIENTE";
                 txtIdCliente.Text = IdCliente.ToString();
                     txtNombreCliente.Text = strCliente;
                     txtDocumento.Text = strDocumento;
@@ -55,10 +60,42 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         }
 
+        public bool Guardar()
+        {
+            Boolean Actualizar = false;
+            if (true)
+            {
+                try
+                {
+                    clientes.C_IdCliente = IdCliente;
+                    clientes.C_Nombre = txtNombreCliente.Text;
+                    clientes.C_Documento = Convert.ToDouble(txtDocumento.Text);
+                    clientes.C_Direccion = txtDireccion.Text;
+                    clientes.C_Telefono = txtTelefono.Text;
+                    clientes.C_Email = txtEmail.Text;
+                    clientes.C_UsuarioModifica = "Javier";
+
+                    string Mensaje = clientes.ActualizarCliente();
+                    MessageBox.Show(Mensaje);
+                    Actualizar = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Falló la actualización: " + ex);
+                    Actualizar = false;
+                }
+            }
+            return Actualizar;
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Guardar();
+        }
     }
 }

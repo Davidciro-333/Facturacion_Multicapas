@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaAccesoDatos;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace CapaLogicaDeNegocios
 {
-    class clsClientes
+    public class clsClientes
     {
         // DEFINIMOS LO ATRIBUTOS DE LA CLASE
         public int C_IdCliente { get; set; }
@@ -28,7 +27,6 @@ namespace CapaLogicaDeNegocios
 
             try
             {
-
                 List<clsParametros> parametros = new List<clsParametros>();
                 parametros.Add(new clsParametros("@IdCliente", C_IdCliente));
                 parametros.Add(new clsParametros("@StrNombre", C_Nombre));
@@ -66,13 +64,20 @@ namespace CapaLogicaDeNegocios
             return Mensaje;
         }
 
-        public DataTable ConsultarCliente()
+        public DataTable ConsultarCliente(string filtro)
         {
             string Sentencia;
 
             try
             {
-                Sentencia = "SELECT * FROM TBLCLIENTES";
+                if (filtro == string.Empty)
+                {
+                    Sentencia = "SELECT * FROM TBLCLIENTES";
+                }
+                else
+                {
+                    Sentencia = $"SELECT * FROM TBLCLIENTES WHERE StrNombre like '%{filtro}%'";
+                }
                 DataTable dataTable = new DataTable();
                 dataTable = clsAcceso.ejecutarConsulta(Sentencia);
                 return dataTable;

@@ -84,7 +84,7 @@ namespace CapaAccesoDatos
             try
             {
                 int Retornado;
-
+                AbrirBD();
                 SqlCommand command = new SqlCommand(procedimiento, Connection);
                 command.CommandType = CommandType.StoredProcedure;
 

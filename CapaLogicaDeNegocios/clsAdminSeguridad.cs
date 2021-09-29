@@ -7,11 +7,8 @@ using CapaAccesoDatos;
 
 namespace CapaLogicaDeNegocios
 {
-    public class cls_Parametros
-    {
-
-    }
     public class clsAdminSeguridad
     {
+
     }
 }

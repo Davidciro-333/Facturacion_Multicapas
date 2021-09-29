@@ -31,11 +31,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
         {
             this.lblTituloClientes = new MaterialSkin.Controls.MaterialLabel();
             this.gbpClientes = new System.Windows.Forms.GroupBox();
-            this.btnBuscarCliente = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtBuscarCliente = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvClientesCRUD2 = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.Id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,10 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.strEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBuscarCliente = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtBuscarCliente = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.gbpClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesCRUD2)).BeginInit();
             this.SuspendLayout();
@@ -73,46 +73,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.gbpClientes.TabIndex = 2;
             this.gbpClientes.TabStop = false;
             // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.Depth = 0;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(502, 19);
-            this.btnBuscarCliente.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Primary = true;
-            this.btnBuscarCliente.Size = new System.Drawing.Size(78, 23);
-            this.btnBuscarCliente.TabIndex = 12;
-            this.btnBuscarCliente.Text = "BUSCAR";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            // 
-            // txtBuscarCliente
-            // 
-            this.txtBuscarCliente.Depth = 0;
-            this.txtBuscarCliente.Hint = "Buscar cliente";
-            this.txtBuscarCliente.Location = new System.Drawing.Point(17, 19);
-            this.txtBuscarCliente.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.PasswordChar = '\0';
-            this.txtBuscarCliente.SelectedText = "";
-            this.txtBuscarCliente.SelectionLength = 0;
-            this.txtBuscarCliente.SelectionStart = 0;
-            this.txtBuscarCliente.Size = new System.Drawing.Size(476, 23);
-            this.txtBuscarCliente.TabIndex = 11;
-            this.txtBuscarCliente.UseSystemPasswordChar = false;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Depth = 0;
-            this.btnNuevo.Location = new System.Drawing.Point(642, 19);
-            this.btnNuevo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Primary = true;
-            this.btnNuevo.Size = new System.Drawing.Size(78, 23);
-            this.btnNuevo.TabIndex = 13;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
             // dgvClientesCRUD2
             // 
             this.dgvClientesCRUD2.AllowUserToAddRows = false;
@@ -131,19 +91,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.dgvClientesCRUD2.Size = new System.Drawing.Size(894, 267);
             this.dgvClientesCRUD2.TabIndex = 14;
             this.dgvClientesCRUD2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientesCRUD2_CellContentClick);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(750, 449);
-            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(75, 32);
-            this.btnSalir.TabIndex = 12;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Id_Cliente
             // 
@@ -201,6 +148,60 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnBorrar.Text = "BORRAR";
             this.btnBorrar.UseColumnTextForButtonValue = true;
             this.btnBorrar.Width = 80;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Depth = 0;
+            this.btnNuevo.Location = new System.Drawing.Point(642, 19);
+            this.btnNuevo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Primary = true;
+            this.btnNuevo.Size = new System.Drawing.Size(78, 23);
+            this.btnNuevo.TabIndex = 13;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Depth = 0;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(502, 19);
+            this.btnBuscarCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Primary = true;
+            this.btnBuscarCliente.Size = new System.Drawing.Size(78, 23);
+            this.btnBuscarCliente.TabIndex = 12;
+            this.btnBuscarCliente.Text = "BUSCAR";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.Depth = 0;
+            this.txtBuscarCliente.Hint = "Buscar cliente";
+            this.txtBuscarCliente.Location = new System.Drawing.Point(17, 19);
+            this.txtBuscarCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.PasswordChar = '\0';
+            this.txtBuscarCliente.SelectedText = "";
+            this.txtBuscarCliente.SelectionLength = 0;
+            this.txtBuscarCliente.SelectionStart = 0;
+            this.txtBuscarCliente.Size = new System.Drawing.Size(476, 23);
+            this.txtBuscarCliente.TabIndex = 11;
+            this.txtBuscarCliente.UseSystemPasswordChar = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Depth = 0;
+            this.btnSalir.Location = new System.Drawing.Point(750, 449);
+            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Primary = true;
+            this.btnSalir.Size = new System.Drawing.Size(75, 32);
+            this.btnSalir.TabIndex = 12;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmClientesV2
             // 

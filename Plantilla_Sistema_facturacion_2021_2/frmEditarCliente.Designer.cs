@@ -30,12 +30,12 @@ namespace Plantilla_Sistema_facturacion_2021_2
         private void InitializeComponent()
         {
             this.gbpEditarCliente = new System.Windows.Forms.GroupBox();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
-            this.txtNombreCliente = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtDocumento = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtDireccion = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDireccion = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDocumento = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtNombreCliente = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblEditarCliente = new System.Windows.Forms.Label();
@@ -50,81 +50,11 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.gbpEditarCliente.Controls.Add(this.txtDocumento);
             this.gbpEditarCliente.Controls.Add(this.txtNombreCliente);
             this.gbpEditarCliente.Controls.Add(this.txtIdCliente);
-            this.gbpEditarCliente.Location = new System.Drawing.Point(43, 94);
+            this.gbpEditarCliente.Location = new System.Drawing.Point(43, 105);
             this.gbpEditarCliente.Name = "gbpEditarCliente";
             this.gbpEditarCliente.Size = new System.Drawing.Size(320, 282);
             this.gbpEditarCliente.TabIndex = 1;
             this.gbpEditarCliente.TabStop = false;
-            // 
-            // txtIdCliente
-            // 
-            this.txtIdCliente.Enabled = false;
-            this.txtIdCliente.Location = new System.Drawing.Point(20, 19);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.ReadOnly = true;
-            this.txtIdCliente.Size = new System.Drawing.Size(30, 20);
-            this.txtIdCliente.TabIndex = 7;
-            this.txtIdCliente.TabStop = false;
-            // 
-            // txtNombreCliente
-            // 
-            this.txtNombreCliente.Depth = 0;
-            this.txtNombreCliente.Hint = "Nombre Cliente";
-            this.txtNombreCliente.Location = new System.Drawing.Point(59, 50);
-            this.txtNombreCliente.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.PasswordChar = '\0';
-            this.txtNombreCliente.SelectedText = "";
-            this.txtNombreCliente.SelectionLength = 0;
-            this.txtNombreCliente.SelectionStart = 0;
-            this.txtNombreCliente.Size = new System.Drawing.Size(232, 23);
-            this.txtNombreCliente.TabIndex = 0;
-            this.txtNombreCliente.UseSystemPasswordChar = false;
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.Depth = 0;
-            this.txtDocumento.Hint = "Documento";
-            this.txtDocumento.Location = new System.Drawing.Point(59, 90);
-            this.txtDocumento.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.PasswordChar = '\0';
-            this.txtDocumento.SelectedText = "";
-            this.txtDocumento.SelectionLength = 0;
-            this.txtDocumento.SelectionStart = 0;
-            this.txtDocumento.Size = new System.Drawing.Size(106, 23);
-            this.txtDocumento.TabIndex = 1;
-            this.txtDocumento.UseSystemPasswordChar = false;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Depth = 0;
-            this.txtDireccion.Hint = "Dirección";
-            this.txtDireccion.Location = new System.Drawing.Point(59, 130);
-            this.txtDireccion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.PasswordChar = '\0';
-            this.txtDireccion.SelectedText = "";
-            this.txtDireccion.SelectionLength = 0;
-            this.txtDireccion.SelectionStart = 0;
-            this.txtDireccion.Size = new System.Drawing.Size(232, 23);
-            this.txtDireccion.TabIndex = 2;
-            this.txtDireccion.UseSystemPasswordChar = false;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Depth = 0;
-            this.txtTelefono.Hint = "Teléfono";
-            this.txtTelefono.Location = new System.Drawing.Point(59, 170);
-            this.txtTelefono.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.PasswordChar = '\0';
-            this.txtTelefono.SelectedText = "";
-            this.txtTelefono.SelectionLength = 0;
-            this.txtTelefono.SelectionStart = 0;
-            this.txtTelefono.Size = new System.Drawing.Size(106, 23);
-            this.txtTelefono.TabIndex = 3;
-            this.txtTelefono.UseSystemPasswordChar = false;
             // 
             // txtEmail
             // 
@@ -141,6 +71,76 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtEmail.TabIndex = 4;
             this.txtEmail.UseSystemPasswordChar = false;
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Depth = 0;
+            this.txtTelefono.Hint = "Teléfono";
+            this.txtTelefono.Location = new System.Drawing.Point(59, 170);
+            this.txtTelefono.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.PasswordChar = '\0';
+            this.txtTelefono.SelectedText = "";
+            this.txtTelefono.SelectionLength = 0;
+            this.txtTelefono.SelectionStart = 0;
+            this.txtTelefono.Size = new System.Drawing.Size(106, 23);
+            this.txtTelefono.TabIndex = 3;
+            this.txtTelefono.UseSystemPasswordChar = false;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Depth = 0;
+            this.txtDireccion.Hint = "Dirección";
+            this.txtDireccion.Location = new System.Drawing.Point(59, 130);
+            this.txtDireccion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.PasswordChar = '\0';
+            this.txtDireccion.SelectedText = "";
+            this.txtDireccion.SelectionLength = 0;
+            this.txtDireccion.SelectionStart = 0;
+            this.txtDireccion.Size = new System.Drawing.Size(232, 23);
+            this.txtDireccion.TabIndex = 2;
+            this.txtDireccion.UseSystemPasswordChar = false;
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.Depth = 0;
+            this.txtDocumento.Hint = "Documento";
+            this.txtDocumento.Location = new System.Drawing.Point(59, 90);
+            this.txtDocumento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.PasswordChar = '\0';
+            this.txtDocumento.SelectedText = "";
+            this.txtDocumento.SelectionLength = 0;
+            this.txtDocumento.SelectionStart = 0;
+            this.txtDocumento.Size = new System.Drawing.Size(106, 23);
+            this.txtDocumento.TabIndex = 1;
+            this.txtDocumento.UseSystemPasswordChar = false;
+            // 
+            // txtNombreCliente
+            // 
+            this.txtNombreCliente.Depth = 0;
+            this.txtNombreCliente.Hint = "Nombre Cliente";
+            this.txtNombreCliente.Location = new System.Drawing.Point(59, 50);
+            this.txtNombreCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.PasswordChar = '\0';
+            this.txtNombreCliente.SelectedText = "";
+            this.txtNombreCliente.SelectionLength = 0;
+            this.txtNombreCliente.SelectionStart = 0;
+            this.txtNombreCliente.Size = new System.Drawing.Size(232, 23);
+            this.txtNombreCliente.TabIndex = 0;
+            this.txtNombreCliente.UseSystemPasswordChar = false;
+            // 
+            // txtIdCliente
+            // 
+            this.txtIdCliente.Enabled = false;
+            this.txtIdCliente.Location = new System.Drawing.Point(20, 19);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.ReadOnly = true;
+            this.txtIdCliente.Size = new System.Drawing.Size(30, 20);
+            this.txtIdCliente.TabIndex = 7;
+            this.txtIdCliente.TabStop = false;
+            // 
             // btnActualizar
             // 
             this.btnActualizar.Depth = 0;
@@ -152,6 +152,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnSalir
             // 
@@ -171,7 +172,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.lblEditarCliente.AutoSize = true;
             this.lblEditarCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditarCliente.ForeColor = System.Drawing.Color.Red;
-            this.lblEditarCliente.Location = new System.Drawing.Point(93, 40);
+            this.lblEditarCliente.Location = new System.Drawing.Point(93, 70);
             this.lblEditarCliente.Name = "lblEditarCliente";
             this.lblEditarCliente.Size = new System.Drawing.Size(185, 28);
             this.lblEditarCliente.TabIndex = 13;
@@ -186,10 +187,8 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.gbpEditarCliente);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmEditarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEditarCliente";
             this.Load += new System.EventHandler(this.frmEditarCliente_Load);
             this.gbpEditarCliente.ResumeLayout(false);
             this.gbpEditarCliente.PerformLayout();

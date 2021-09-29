@@ -16,7 +16,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmClientesV2());
         }
     }
 }
