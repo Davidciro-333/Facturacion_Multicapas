@@ -34,7 +34,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.dgvClientesCRUD2 = new System.Windows.Forms.DataGridView();
             this.Id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.strEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +80,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.dgvClientesCRUD2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Cliente,
             this.strCliente,
-            this.strDocumento,
+            this.NumDocumento,
             this.strDireccion,
             this.strTelefono,
             this.strEmail,
@@ -106,12 +106,12 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.strCliente.ReadOnly = true;
             this.strCliente.Width = 250;
             // 
-            // strDocumento
+            // NumDocumento
             // 
-            this.strDocumento.HeaderText = "DOCUMENTO";
-            this.strDocumento.Name = "strDocumento";
-            this.strDocumento.ReadOnly = true;
-            this.strDocumento.Width = 80;
+            this.NumDocumento.HeaderText = "DOCUMENTO";
+            this.NumDocumento.Name = "NumDocumento";
+            this.NumDocumento.ReadOnly = true;
+            this.NumDocumento.Width = 80;
             // 
             // strDireccion
             // 
@@ -239,5 +239,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
         private System.Windows.Forms.DataGridViewTextBoxColumn strEmail;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumDocumento;
     }
 }

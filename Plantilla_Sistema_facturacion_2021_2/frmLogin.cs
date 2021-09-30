@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaLogicaDeNegocios;
 
 namespace Plantilla_Sistema_facturacion_2021_2
 {
     public partial class frmLogin : Form
     {
+        clsValidarUsuario clsValidar = new clsValidarUsuario();
         public frmLogin()
         {
             InitializeComponent();
@@ -24,9 +26,26 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
-            frmPrincipal principal = new frmPrincipal();
-            this.Hide();
-            principal.Show();
+            if (txtUsuario.Text != string.Empty || txtPassword.Text != string.Empty)
+            {
+                clsValidar.C_StrUsuario = txtUsuario.Text;
+                clsValidar.C_StrClave = txtPassword.Text;
+                clsValidar.ValidarUsuario();
+
+                if (clsValidar.C_IdEmpleado > 0)
+                {
+                    MessageBox.Show("¡Bienvenidio: " + clsValidar.C_StrUsuario + "! Validación aceptada");
+                    frmPrincipal principal = new frmPrincipal();
+                    this.Hide();
+                    principal.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("¡ERROR, Los campos de Usuario y contraseña no deben de estar vacíos!");
+                txtUsuario.Focus();
+            }
+
         }
     }
 }

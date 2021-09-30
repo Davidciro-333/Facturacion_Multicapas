@@ -40,8 +40,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.webAyuda.Name = "webAyuda";
             this.webAyuda.Size = new System.Drawing.Size(891, 625);
             this.webAyuda.TabIndex = 0;
-            this.webAyuda.Url = new System.Uri("https://docs.microsoft.com/es-es/visualstudio/windows/?f1url=%3FappId%3DDev16IDEF" +
-        "1%26l%3Des-ES%26k%3Dk(MSDNSTART)%26rd%3Dtrue&view=vs-2019", System.UriKind.Absolute);
+            this.webAyuda.Url = new System.Uri("https://docs.microsoft.com/es-es/visualstudio/windows/", System.UriKind.Absolute);
             // 
             // btnSalir
             // 

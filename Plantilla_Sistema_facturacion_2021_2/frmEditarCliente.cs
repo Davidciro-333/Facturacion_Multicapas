@@ -16,13 +16,13 @@ namespace Plantilla_Sistema_facturacion_2021_2
     {
         public int IdCliente { get; set; }
         public string strCliente { get; set; }
-        public string strDocumento { get; set; }
+        public int strDocumento { get; set; }
         public string strTelefono { get; set; }
         public string strDireccion { get; set; }
         public string strEmail { get; set; }
 
         clsClientes clientes = new clsClientes();
-
+        clsValidarUsuario validar = new clsValidarUsuario();
         public frmEditarCliente()
         {
             InitializeComponent();
@@ -30,7 +30,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         private void frmEditarCliente_Load(object sender, EventArgs e)
         {
-            frmEditarCliente editarCliente = new frmEditarCliente();
             if (IdCliente == 0)
             {
                 //Registro nuevo
@@ -46,11 +45,11 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
                 lblEditarCliente.Text = "EDITAR CLIENTE";
                 txtIdCliente.Text = IdCliente.ToString();
-                    txtNombreCliente.Text = strCliente;
-                    txtDocumento.Text = strDocumento;
-                    txtDireccion.Text = strDireccion;
-                    txtTelefono.Text = strTelefono;
-                    txtEmail.Text = strEmail;
+                txtNombreCliente.Text = strCliente;
+                txtDocumento.Text = strDocumento.ToString();
+                txtDireccion.Text = strDireccion;
+                txtTelefono.Text = strTelefono;
+                txtEmail.Text = strEmail;
 
                 int x = (Convert.ToInt32(Size.Width) / 2) - (Convert.ToInt32(lblEditarCliente.Size.Width) / 2);
                 int y = lblEditarCliente.Location.Y;
@@ -60,10 +59,97 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         }
 
+        private Boolean Validar()
+        {
+            Boolean errorCampos = true;
+
+            if (txtNombreCliente.Text == string.Empty)
+            {
+                MensajeError.SetError(txtNombreCliente, "Debe ingresar el nombre del cliente");
+                txtNombreCliente.Focus();
+                errorCampos = false;
+            }
+            else
+            {
+                MensajeError.SetError(txtNombreCliente, "");
+            }
+
+            if (txtDocumento.Text == string.Empty)
+            {
+                MensajeError.SetError(txtDocumento, "Debe ingresar documento del cliente");
+                txtDocumento.Focus();
+                errorCampos = false;
+            }
+            else
+            {
+                MensajeError.SetError(txtDocumento, "");
+            }
+
+            if (txtDireccion.Text == string.Empty)
+            {
+                MensajeError.SetError(txtDireccion, "Debe ingresar la direccion del cliente");
+                txtDireccion.Focus();
+                errorCampos = false;
+            }
+            else
+            {
+                MensajeError.SetError(txtDireccion, "");
+            }
+
+            if (txtTelefono.Text == string.Empty)
+            {
+                MensajeError.SetError(txtTelefono, "Debe ingresar el telefono del cliente");
+                txtTelefono.Focus();
+                errorCampos = false;
+            }
+            else
+            {
+                MensajeError.SetError(txtTelefono, "");
+            }
+
+            if (txtEmail.Text == string.Empty)
+            {
+                MensajeError.SetError(txtEmail, "Debe ingresar el E-mail del cliente");
+                txtEmail.Focus();
+                errorCampos = false;
+            }
+            else
+            {
+                MensajeError.SetError(txtEmail, "");
+            }
+
+            if (!esNumerico(txtDocumento.Text))
+            {
+                MensajeError.SetError(txtDocumento, "El documento debe ser numérico");
+                txtDocumento.Focus();
+                return false;
+            }
+            else
+            {
+                MensajeError.SetError(txtDocumento, "");
+            }
+
+            return errorCampos;
+        }
+
+        // Funcion para validar si un valor dado es númerico
+        private bool esNumerico(string num)
+        {
+            try
+            {
+                double x = Convert.ToDouble(num);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
         public bool Guardar()
         {
             Boolean Actualizar = false;
-            if (true)
+            if (Validar())
             {
                 try
                 {
@@ -73,7 +159,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
                     clientes.C_Direccion = txtDireccion.Text;
                     clientes.C_Telefono = txtTelefono.Text;
                     clientes.C_Email = txtEmail.Text;
-                    clientes.C_UsuarioModifica = "Javier";
+                    clientes.C_UsuarioModifica = validar.C_StrUsuario;
 
                     string Mensaje = clientes.ActualizarCliente();
                     MessageBox.Show(Mensaje);

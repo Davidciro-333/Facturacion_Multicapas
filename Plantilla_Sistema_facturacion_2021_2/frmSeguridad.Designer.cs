@@ -29,17 +29,20 @@ namespace Plantilla_Sistema_facturacion_2021_2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTituloSeguridad = new MaterialSkin.Controls.MaterialLabel();
             this.gbpUsuariosSistema = new System.Windows.Forms.GroupBox();
-            this.lblEmpleado = new MaterialSkin.Controls.MaterialLabel();
-            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
-            this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtClave = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.lblEmpleado = new MaterialSkin.Controls.MaterialLabel();
             this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbpUsuariosSistema.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloSeguridad
@@ -67,26 +70,20 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.gbpUsuariosSistema.TabIndex = 4;
             this.gbpUsuariosSistema.TabStop = false;
             // 
-            // lblEmpleado
+            // txtClave
             // 
-            this.lblEmpleado.AutoSize = true;
-            this.lblEmpleado.Depth = 0;
-            this.lblEmpleado.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEmpleado.Location = new System.Drawing.Point(40, 69);
-            this.lblEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(80, 19);
-            this.lblEmpleado.TabIndex = 0;
-            this.lblEmpleado.Text = "Empleado:";
-            // 
-            // cmbEmpleado
-            // 
-            this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(127, 66);
-            this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(261, 21);
-            this.cmbEmpleado.TabIndex = 1;
+            this.txtClave.Depth = 0;
+            this.txtClave.Hint = "Clave";
+            this.txtClave.Location = new System.Drawing.Point(127, 172);
+            this.txtClave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '\0';
+            this.txtClave.SelectedText = "";
+            this.txtClave.SelectionLength = 0;
+            this.txtClave.SelectionStart = 0;
+            this.txtClave.Size = new System.Drawing.Size(178, 23);
+            this.txtClave.TabIndex = 3;
+            this.txtClave.UseSystemPasswordChar = false;
             // 
             // txtUsuario
             // 
@@ -103,20 +100,26 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.UseSystemPasswordChar = false;
             // 
-            // txtClave
+            // cmbEmpleado
             // 
-            this.txtClave.Depth = 0;
-            this.txtClave.Hint = "Clave";
-            this.txtClave.Location = new System.Drawing.Point(127, 172);
-            this.txtClave.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtClave.Name = "txtClave";
-            this.txtClave.PasswordChar = '\0';
-            this.txtClave.SelectedText = "";
-            this.txtClave.SelectionLength = 0;
-            this.txtClave.SelectionStart = 0;
-            this.txtClave.Size = new System.Drawing.Size(178, 23);
-            this.txtClave.TabIndex = 3;
-            this.txtClave.UseSystemPasswordChar = false;
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Location = new System.Drawing.Point(127, 66);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(261, 21);
+            this.cmbEmpleado.TabIndex = 1;
+            // 
+            // lblEmpleado
+            // 
+            this.lblEmpleado.AutoSize = true;
+            this.lblEmpleado.Depth = 0;
+            this.lblEmpleado.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEmpleado.Location = new System.Drawing.Point(40, 69);
+            this.lblEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblEmpleado.Name = "lblEmpleado";
+            this.lblEmpleado.Size = new System.Drawing.Size(80, 19);
+            this.lblEmpleado.TabIndex = 0;
+            this.lblEmpleado.Text = "Empleado:";
             // 
             // btnEliminar
             // 
@@ -129,6 +132,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -141,6 +145,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnActualizar.TabIndex = 16;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnConsultar
             // 
@@ -153,6 +158,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnConsultar.TabIndex = 15;
             this.btnConsultar.Text = "CONSULTAR";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnSalir
             // 
@@ -166,6 +172,10 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // MensajeError
+            // 
+            this.MensajeError.ContainerControl = this;
             // 
             // frmSeguridad
             // 
@@ -181,8 +191,10 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSeguridad";
             this.Text = "frmSeguridad";
+            this.Load += new System.EventHandler(this.frmSeguridad_Load);
             this.gbpUsuariosSistema.ResumeLayout(false);
             this.gbpUsuariosSistema.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +212,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizar;
         private MaterialSkin.Controls.MaterialRaisedButton btnConsultar;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }

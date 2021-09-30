@@ -112,6 +112,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.tbpMenu.SelectedIndex = 0;
             this.tbpMenu.Size = new System.Drawing.Size(238, 583);
             this.tbpMenu.TabIndex = 0;
+            this.tbpMenu.SelectedIndexChanged += new System.EventHandler(this.tbpMenu_SelectedIndexChanged);
             // 
             // Principal
             // 

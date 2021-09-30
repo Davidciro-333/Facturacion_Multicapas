@@ -8,7 +8,7 @@ using System.Data;
 
 namespace CapaLogicaDeNegocios
 {
-    class clsValidarUsuario
+    public class clsValidarUsuario
     {
         // DEFINIMOS LOS ATRIBUTOS DE LA CLASE
         public string C_StrUsuario { get; set; }
@@ -21,7 +21,7 @@ namespace CapaLogicaDeNegocios
         {
             try
             {
-                string Sentencia = $"SELECT IdEmpleado, StrUsuario FROM TBLSEGURIDAD WHERE StrUsuario = {C_StrUsuario} AND StrClave = {C_StrClave}";
+                string Sentencia = $"SELECT IdEmpleado, StrUsuario FROM TBLSEGURIDAD WHERE StrUsuario = '{C_StrUsuario}' AND StrClave = {C_StrClave}";
                 DataTable dataTable = new DataTable();
                 dataTable = clsAcceso.ejecutarConsulta(Sentencia);
 

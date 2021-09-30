@@ -14,14 +14,19 @@ namespace Plantilla_Sistema_facturacion_2021_2
 {
     public partial class frmPrincipal : MaterialForm
     {
+        frmClientesV2 clientesV2 = new frmClientesV2();
+        frmProductos productos = new frmProductos();
+        frmCategorias categorias = new frmCategorias();
+        frmFacturas facturas = new frmFacturas();
+        frmInformeFactura informeFactura = new frmInformeFactura();
+        frmEmpleados empleados = new frmEmpleados();
+        frmRoles roles = new frmRoles();
+        frmSeguridad seguridad = new frmSeguridad();
+        frmAyuda ayuda = new frmAyuda();
+
         public frmPrincipal()
         {
             InitializeComponent();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void AbrirForm(Form formHijo)
@@ -40,56 +45,71 @@ namespace Plantilla_Sistema_facturacion_2021_2
             /*frmClientes clientes = new frmClientes();
             AbrirForm(clientes);*/
 
-            frmClientesV2 clientesV2 = new frmClientesV2();
             AbrirForm(clientesV2);
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            frmProductos productos = new frmProductos();
             AbrirForm(productos);
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
-            frmCategorias categorias = new frmCategorias();
             AbrirForm(categorias);
         }
 
         private void btnFacturas_Click(object sender, EventArgs e)
         {
-            frmFacturas facturas = new frmFacturas();
             AbrirForm(facturas);
         }
 
         private void btnInformes_Click(object sender, EventArgs e)
         {
-            frmInformeFactura informeFactura = new frmInformeFactura();
             AbrirForm(informeFactura);
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            frmEmpleados empleados = new frmEmpleados();
             AbrirForm(empleados);
         }
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            frmRoles roles = new frmRoles();
             AbrirForm(roles);
         }
 
         private void btnSeguridad_Click(object sender, EventArgs e)
         {
-            frmSeguridad seguridad = new frmSeguridad();
             AbrirForm(seguridad);
         }
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            frmAyuda ayuda = new frmAyuda();
             AbrirForm(ayuda);
+        }
+
+        private void tbpMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tbpMenu.SelectedIndex)
+            {
+                case 1:
+                    AbrirForm(clientesV2);
+                    break;
+                case 2:
+                    AbrirForm(facturas);
+                    break;
+                case 3:
+                    AbrirForm(empleados);
+                    break;
+                case 4:
+                    AbrirForm(ayuda);
+                    break;
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

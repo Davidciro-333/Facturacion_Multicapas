@@ -29,6 +29,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbpEditarCliente = new System.Windows.Forms.GroupBox();
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -39,7 +40,9 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblEditarCliente = new System.Windows.Forms.Label();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbpEditarCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // gbpEditarCliente
@@ -178,6 +181,10 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.lblEditarCliente.TabIndex = 13;
             this.lblEditarCliente.Text = "EDITAR CLIENTE";
             // 
+            // MensajeError
+            // 
+            this.MensajeError.ContainerControl = this;
+            // 
             // frmEditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +199,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.Load += new System.EventHandler(this.frmEditarCliente_Load);
             this.gbpEditarCliente.ResumeLayout(false);
             this.gbpEditarCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +216,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizar;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
         private System.Windows.Forms.Label lblEditarCliente;
+        private System.Windows.Forms.ErrorProvider MensajeError;
     }
 }

@@ -83,7 +83,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
                 int posActualFila = dgvClientesCRUD2.CurrentRow.Index;
                 editarCliente.IdCliente = int.Parse(dgvClientesCRUD2[0, posActualFila].Value.ToString());
                 editarCliente.strCliente = dgvClientesCRUD2[1, posActualFila].Value.ToString();
-                editarCliente.strDocumento = dgvClientesCRUD2[2, posActualFila].Value.ToString();
+                editarCliente.strDocumento = int.Parse(dgvClientesCRUD2[2, posActualFila].Value.ToString());
                 editarCliente.strDireccion = dgvClientesCRUD2[3, posActualFila].Value.ToString();
                 editarCliente.strTelefono = dgvClientesCRUD2[4, posActualFila].Value.ToString();
                 editarCliente.strEmail = dgvClientesCRUD2[5, posActualFila].Value.ToString();
