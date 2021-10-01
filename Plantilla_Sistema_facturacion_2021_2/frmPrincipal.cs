@@ -22,7 +22,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
         frmEmpleados empleados = new frmEmpleados();
         frmRoles roles = new frmRoles();
         frmSeguridad seguridad = new frmSeguridad();
-        frmAyuda ayuda = new frmAyuda();
 
         public frmPrincipal()
         {
@@ -85,6 +84,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
+            frmAyuda ayuda = new frmAyuda();
             AbrirForm(ayuda);
         }
 
@@ -102,6 +102,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
                     AbrirForm(empleados);
                     break;
                 case 4:
+                    frmAyuda ayuda = new frmAyuda();
                     AbrirForm(ayuda);
                     break;
             }

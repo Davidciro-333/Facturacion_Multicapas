@@ -29,8 +29,9 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            editarCliente.IdCliente = 0;
-            editarCliente.ShowDialog();
+            frmEditarCliente editar = new frmEditarCliente();
+            editar.IdCliente = 0;
+            editar.ShowDialog();
             LLENAR_GRID();
         }
 

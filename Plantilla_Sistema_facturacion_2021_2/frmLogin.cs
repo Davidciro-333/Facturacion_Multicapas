@@ -32,12 +32,19 @@ namespace Plantilla_Sistema_facturacion_2021_2
                 clsValidar.C_StrClave = txtPassword.Text;
                 clsValidar.ValidarUsuario();
 
-                if (clsValidar.C_IdEmpleado > 0)
+                if (clsValidar.C_IdEmpleado != 0)
                 {
                     MessageBox.Show("¡Bienvenidio: " + clsValidar.C_StrUsuario + "! Validación aceptada");
                     frmPrincipal principal = new frmPrincipal();
                     this.Hide();
                     principal.Show();
+                }
+                else
+                {
+                    txtUsuario.Text = string.Empty;
+                    txtUsuario.Focus();
+                    txtPassword.Text = string.Empty;
+                    MessageBox.Show("¡ERROR USUARIO Y CONTRASEÑA NO ENCONTRADOS!");
                 }
             }
             else

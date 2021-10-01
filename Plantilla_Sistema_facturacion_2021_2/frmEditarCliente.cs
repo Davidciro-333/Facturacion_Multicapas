@@ -22,7 +22,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
         public string strEmail { get; set; }
 
         clsClientes clientes = new clsClientes();
-        clsValidarUsuario validar = new clsValidarUsuario();
         public frmEditarCliente()
         {
             InitializeComponent();
@@ -159,7 +158,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
                     clientes.C_Direccion = txtDireccion.Text;
                     clientes.C_Telefono = txtTelefono.Text;
                     clientes.C_Email = txtEmail.Text;
-                    clientes.C_UsuarioModifica = validar.C_StrUsuario;
+                    clientes.C_UsuarioModifica = "Javier";
 
                     string Mensaje = clientes.ActualizarCliente();
                     MessageBox.Show(Mensaje);
