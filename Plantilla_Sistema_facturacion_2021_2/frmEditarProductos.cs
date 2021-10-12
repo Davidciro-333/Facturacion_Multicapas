@@ -7,21 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using CapaLogicaDeNegocios;
 
 namespace Plantilla_Sistema_facturacion_2021_2
 {
-    public partial class frmProductos : Form
+    public partial class frmEditarProductos : MaterialForm
     {
-        public frmProductos()
+        public frmEditarProductos()
         {
             InitializeComponent();
         }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
     }
 }

@@ -32,6 +32,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.components = new System.ComponentModel.Container();
             this.lblEditarEmpleado = new System.Windows.Forms.Label();
             this.gbpEmpleadosDetalles = new System.Windows.Forms.GroupBox();
+            this.txtIdEmpleado = new System.Windows.Forms.TextBox();
             this.txtDatosAdicionales = new System.Windows.Forms.TextBox();
             this.lblDatosAdicionales = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFechaRetiro = new System.Windows.Forms.DateTimePicker();
@@ -45,7 +46,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtDireccionEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtDocumentoEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtIdEmpleado = new System.Windows.Forms.TextBox();
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
@@ -86,8 +86,18 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.gbpEmpleadosDetalles.TabIndex = 15;
             this.gbpEmpleadosDetalles.TabStop = false;
             // 
+            // txtIdEmpleado
+            // 
+            this.txtIdEmpleado.Location = new System.Drawing.Point(15, 19);
+            this.txtIdEmpleado.Name = "txtIdEmpleado";
+            this.txtIdEmpleado.Size = new System.Drawing.Size(32, 20);
+            this.txtIdEmpleado.TabIndex = 13;
+            this.txtIdEmpleado.Visible = false;
+            // 
             // txtDatosAdicionales
             // 
+            this.txtDatosAdicionales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDatosAdicionales.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDatosAdicionales.Location = new System.Drawing.Point(320, 163);
             this.txtDatosAdicionales.Multiline = true;
             this.txtDatosAdicionales.Name = "txtDatosAdicionales";
@@ -245,14 +255,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtNombreEmpleado.TabIndex = 0;
             this.txtNombreEmpleado.UseSystemPasswordChar = false;
             // 
-            // txtIdEmpleado
-            // 
-            this.txtIdEmpleado.Location = new System.Drawing.Point(15, 19);
-            this.txtIdEmpleado.Name = "txtIdEmpleado";
-            this.txtIdEmpleado.Size = new System.Drawing.Size(32, 20);
-            this.txtIdEmpleado.TabIndex = 13;
-            this.txtIdEmpleado.Visible = false;
-            // 
             // btnActualizar
             // 
             this.btnActualizar.Depth = 0;
@@ -264,6 +266,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnActualizar.TabIndex = 16;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnSalir
             // 
@@ -276,6 +279,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // MensajeError
             // 

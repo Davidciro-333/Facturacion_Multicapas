@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="clsAdminSeguridad.cs" />
     <Compile Include="clsClientes.cs" />
+    <Compile Include="clsEmpleado.cs" />
     <Compile Include="clsEmpleados.cs" />
     <Compile Include="clsValidarUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

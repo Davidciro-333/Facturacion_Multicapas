@@ -82,6 +82,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // 
             // pnlContenedor
             // 
+            this.pnlContenedor.AutoScroll = true;
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(238, 0);
             this.pnlContenedor.Name = "pnlContenedor";
@@ -427,6 +428,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1200, 650);
             this.Controls.Add(this.tabOpcionesMenu);
             this.Controls.Add(this.pnlPrincipal);
