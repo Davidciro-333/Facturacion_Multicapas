@@ -31,13 +31,24 @@ namespace Plantilla_Sistema_facturacion_2021_2
         {
             this.lblAdminProductos = new MaterialSkin.Controls.MaterialLabel();
             this.gpbBusProducto = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.dgProductos = new System.Windows.Forms.DataGridView();
             this.btnBuscarProductos = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtBuscarProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StrNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StrCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumPrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumPrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StrDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strFoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gpbBusProducto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAdminProductos
@@ -56,7 +67,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // gpbBusProducto
             // 
             this.gpbBusProducto.Controls.Add(this.btnNuevo);
-            this.gpbBusProducto.Controls.Add(this.dataGridView1);
+            this.gpbBusProducto.Controls.Add(this.dgProductos);
             this.gpbBusProducto.Controls.Add(this.btnBuscarProductos);
             this.gpbBusProducto.Controls.Add(this.txtBuscarProducto);
             this.gpbBusProducto.Location = new System.Drawing.Point(12, 115);
@@ -65,13 +76,40 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.gpbBusProducto.TabIndex = 15;
             this.gpbBusProducto.TabStop = false;
             // 
-            // dataGridView1
+            // btnNuevo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(885, 227);
-            this.dataGridView1.TabIndex = 18;
+            this.btnNuevo.Depth = 0;
+            this.btnNuevo.Location = new System.Drawing.Point(616, 20);
+            this.btnNuevo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Primary = true;
+            this.btnNuevo.Size = new System.Drawing.Size(78, 24);
+            this.btnNuevo.TabIndex = 19;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // dgProductos
+            // 
+            this.dgProductos.AllowUserToAddRows = false;
+            this.dgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProducto,
+            this.StrNombre,
+            this.StrCodigo,
+            this.NumPrecioCompra,
+            this.NumPrecioVenta,
+            this.IdCategoria,
+            this.StrDetalle,
+            this.strFoto,
+            this.NumStock,
+            this.btnEditar,
+            this.btnBorrar});
+            this.dgProductos.Location = new System.Drawing.Point(15, 50);
+            this.dgProductos.Name = "dgProductos";
+            this.dgProductos.Size = new System.Drawing.Size(885, 227);
+            this.dgProductos.TabIndex = 18;
+            this.dgProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProductos_CellContentClick);
             // 
             // btnBuscarProductos
             // 
@@ -84,6 +122,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnBuscarProductos.TabIndex = 17;
             this.btnBuscarProductos.Text = "BUSCAR";
             this.btnBuscarProductos.UseVisualStyleBackColor = true;
+            this.btnBuscarProductos.Click += new System.EventHandler(this.btnBuscarProductos_Click);
             // 
             // txtBuscarProducto
             // 
@@ -113,17 +152,84 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnNuevo
+            // IdProducto
             // 
-            this.btnNuevo.Depth = 0;
-            this.btnNuevo.Location = new System.Drawing.Point(616, 20);
-            this.btnNuevo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Primary = true;
-            this.btnNuevo.Size = new System.Drawing.Size(78, 24);
-            this.btnNuevo.TabIndex = 19;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.IdProducto.HeaderText = "ID";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            this.IdProducto.Width = 35;
+            // 
+            // StrNombre
+            // 
+            this.StrNombre.HeaderText = "PRODUCTO";
+            this.StrNombre.Name = "StrNombre";
+            this.StrNombre.ReadOnly = true;
+            this.StrNombre.Width = 120;
+            // 
+            // StrCodigo
+            // 
+            this.StrCodigo.HeaderText = "CODIGO";
+            this.StrCodigo.Name = "StrCodigo";
+            this.StrCodigo.ReadOnly = true;
+            this.StrCodigo.Width = 60;
+            // 
+            // NumPrecioCompra
+            // 
+            this.NumPrecioCompra.HeaderText = "PRECIO COMPRA";
+            this.NumPrecioCompra.Name = "NumPrecioCompra";
+            this.NumPrecioCompra.ReadOnly = true;
+            this.NumPrecioCompra.Width = 80;
+            // 
+            // NumPrecioVenta
+            // 
+            this.NumPrecioVenta.HeaderText = "PRECIO VENTA";
+            this.NumPrecioVenta.Name = "NumPrecioVenta";
+            this.NumPrecioVenta.ReadOnly = true;
+            this.NumPrecioVenta.Width = 80;
+            // 
+            // IdCategoria
+            // 
+            this.IdCategoria.HeaderText = "CATEGORIA";
+            this.IdCategoria.Name = "IdCategoria";
+            this.IdCategoria.ReadOnly = true;
+            this.IdCategoria.Width = 75;
+            // 
+            // StrDetalle
+            // 
+            this.StrDetalle.HeaderText = "DETALLE";
+            this.StrDetalle.Name = "StrDetalle";
+            this.StrDetalle.ReadOnly = true;
+            // 
+            // strFoto
+            // 
+            this.strFoto.HeaderText = "FOTO";
+            this.strFoto.Name = "strFoto";
+            this.strFoto.ReadOnly = true;
+            // 
+            // NumStock
+            // 
+            this.NumStock.HeaderText = "STOCK";
+            this.NumStock.Name = "NumStock";
+            this.NumStock.ReadOnly = true;
+            this.NumStock.Width = 50;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "EDITAR";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.ReadOnly = true;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseColumnTextForButtonValue = true;
+            this.btnEditar.Width = 70;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.HeaderText = "BORRAR";
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.ReadOnly = true;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.UseColumnTextForButtonValue = true;
+            this.btnBorrar.Width = 70;
             // 
             // frmProductos
             // 
@@ -136,8 +242,9 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProductos";
             this.Text = "frmProductos";
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             this.gpbBusProducto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,9 +254,20 @@ namespace Plantilla_Sistema_facturacion_2021_2
         private MaterialSkin.Controls.MaterialLabel lblAdminProductos;
         private System.Windows.Forms.GroupBox gpbBusProducto;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarProducto;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgProductos;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarProductos;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
         private MaterialSkin.Controls.MaterialRaisedButton btnNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StrNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StrCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumPrecioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumPrecioVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StrDetalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strFoto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumStock;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btnBorrar;
     }
 }

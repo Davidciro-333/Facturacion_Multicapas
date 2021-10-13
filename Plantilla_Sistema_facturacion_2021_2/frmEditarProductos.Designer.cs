@@ -29,32 +29,36 @@ namespace Plantilla_Sistema_facturacion_2021_2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gpbDetalles = new System.Windows.Forms.GroupBox();
             this.txtCodReferencia = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPrecioCompra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPrecioVenta = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCantidadStock = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCategoria = new MaterialSkin.Controls.MaterialLabel();
             this.lblDetalles = new MaterialSkin.Controls.MaterialLabel();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.txtRutaImagen = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblEditarEmpleado = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtIdProducto = new System.Windows.Forms.TextBox();
+            this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtDetalleProducto = new System.Windows.Forms.TextBox();
             this.gpbDetalles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbDetalles
             // 
+            this.gpbDetalles.Controls.Add(this.txtDetalleProducto);
+            this.gpbDetalles.Controls.Add(this.txtIdProducto);
             this.gpbDetalles.Controls.Add(this.txtCodReferencia);
             this.gpbDetalles.Controls.Add(this.txtPrecioCompra);
             this.gpbDetalles.Controls.Add(this.txtPrecioVenta);
             this.gpbDetalles.Controls.Add(this.txtCantidadStock);
             this.gpbDetalles.Controls.Add(this.txtNombreProducto);
-            this.gpbDetalles.Controls.Add(this.pictureBox1);
             this.gpbDetalles.Controls.Add(this.lblCategoria);
             this.gpbDetalles.Controls.Add(this.lblDetalles);
             this.gpbDetalles.Controls.Add(this.cmbCategoria);
@@ -69,7 +73,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // 
             this.txtCodReferencia.Depth = 0;
             this.txtCodReferencia.Hint = "Codigo referencia";
-            this.txtCodReferencia.Location = new System.Drawing.Point(15, 54);
+            this.txtCodReferencia.Location = new System.Drawing.Point(15, 68);
             this.txtCodReferencia.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodReferencia.Name = "txtCodReferencia";
             this.txtCodReferencia.PasswordChar = '\0';
@@ -84,7 +88,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // 
             this.txtPrecioCompra.Depth = 0;
             this.txtPrecioCompra.Hint = "Precio compra";
-            this.txtPrecioCompra.Location = new System.Drawing.Point(15, 83);
+            this.txtPrecioCompra.Location = new System.Drawing.Point(15, 97);
             this.txtPrecioCompra.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.PasswordChar = '\0';
@@ -99,7 +103,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // 
             this.txtPrecioVenta.Depth = 0;
             this.txtPrecioVenta.Hint = "Precio venta";
-            this.txtPrecioVenta.Location = new System.Drawing.Point(15, 112);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(15, 126);
             this.txtPrecioVenta.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.PasswordChar = '\0';
@@ -114,7 +118,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // 
             this.txtCantidadStock.Depth = 0;
             this.txtCantidadStock.Hint = "Cantidad stock";
-            this.txtCantidadStock.Location = new System.Drawing.Point(15, 141);
+            this.txtCantidadStock.Location = new System.Drawing.Point(15, 155);
             this.txtCantidadStock.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCantidadStock.Name = "txtCantidadStock";
             this.txtCantidadStock.PasswordChar = '\0';
@@ -129,7 +133,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // 
             this.txtNombreProducto.Depth = 0;
             this.txtNombreProducto.Hint = "Nombre producto";
-            this.txtNombreProducto.Location = new System.Drawing.Point(15, 25);
+            this.txtNombreProducto.Location = new System.Drawing.Point(15, 39);
             this.txtNombreProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.PasswordChar = '\0';
@@ -139,15 +143,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtNombreProducto.Size = new System.Drawing.Size(210, 23);
             this.txtNombreProducto.TabIndex = 0;
             this.txtNombreProducto.UseSystemPasswordChar = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox1.Location = new System.Drawing.Point(351, 134);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(222, 114);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
             // 
             // lblCategoria
             // 
@@ -203,16 +198,16 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtRutaImagen.TabIndex = 8;
             this.txtRutaImagen.UseSystemPasswordChar = false;
             // 
-            // lblEditarEmpleado
+            // lblTitulo
             // 
-            this.lblEditarEmpleado.AutoSize = true;
-            this.lblEditarEmpleado.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarEmpleado.ForeColor = System.Drawing.Color.Red;
-            this.lblEditarEmpleado.Location = new System.Drawing.Point(289, 80);
-            this.lblEditarEmpleado.Name = "lblEditarEmpleado";
-            this.lblEditarEmpleado.Size = new System.Drawing.Size(221, 28);
-            this.lblEditarEmpleado.TabIndex = 16;
-            this.lblEditarEmpleado.Text = "EDITAR PRODUCTO";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Red;
+            this.lblTitulo.Location = new System.Drawing.Point(289, 80);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(221, 28);
+            this.lblTitulo.TabIndex = 16;
+            this.lblTitulo.Text = "EDITAR PRODUCTO";
             // 
             // btnActualizar
             // 
@@ -225,6 +220,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnActualizar.TabIndex = 17;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnSalir
             // 
@@ -237,6 +233,26 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnSalir.TabIndex = 18;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // txtIdProducto
+            // 
+            this.txtIdProducto.Location = new System.Drawing.Point(15, 13);
+            this.txtIdProducto.Name = "txtIdProducto";
+            this.txtIdProducto.Size = new System.Drawing.Size(29, 20);
+            this.txtIdProducto.TabIndex = 11;
+            // 
+            // MensajeError
+            // 
+            this.MensajeError.ContainerControl = this;
+            // 
+            // txtDetalleProducto
+            // 
+            this.txtDetalleProducto.Location = new System.Drawing.Point(351, 135);
+            this.txtDetalleProducto.Multiline = true;
+            this.txtDetalleProducto.Name = "txtDetalleProducto";
+            this.txtDetalleProducto.Size = new System.Drawing.Size(222, 94);
+            this.txtDetalleProducto.TabIndex = 12;
             // 
             // frmEditarProductos
             // 
@@ -245,13 +261,14 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.lblEditarEmpleado);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.gpbDetalles);
             this.Name = "frmEditarProductos";
             this.Text = "frmEditarProductos";
+            this.Load += new System.EventHandler(this.frmEditarProductos_Load);
             this.gpbDetalles.ResumeLayout(false);
             this.gpbDetalles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,13 +282,15 @@ namespace Plantilla_Sistema_facturacion_2021_2
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPrecioVenta;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCantidadStock;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreProducto;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel lblCategoria;
         private MaterialSkin.Controls.MaterialLabel lblDetalles;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtRutaImagen;
-        private System.Windows.Forms.Label lblEditarEmpleado;
+        private System.Windows.Forms.Label lblTitulo;
         private MaterialSkin.Controls.MaterialRaisedButton btnActualizar;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
+        private System.Windows.Forms.TextBox txtIdProducto;
+        private System.Windows.Forms.ErrorProvider MensajeError;
+        private System.Windows.Forms.TextBox txtDetalleProducto;
     }
 }
