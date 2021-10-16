@@ -57,17 +57,17 @@ namespace Plantilla_Sistema_facturacion_2021_2
             {
 
                 int posActual = dgProductos.CurrentRow.Index;
-                if (MessageBox.Show($"¿Quieres borrar el cliente { dgProductos[1, posActual].Value}?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"¿Quieres borrar el producto { dgProductos[1, posActual].Value}?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     productos.C_IdProducto = Convert.ToInt32(dgProductos[0, posActual].Value.ToString());
                     string Mensaje = productos.EliminarProducto();
                     if (Mensaje == "Los datos fueron actualizados")
                     {
-                        MessageBox.Show($"CLIENTE { dgProductos[1, posActual].Value} BORRADO");
+                        MessageBox.Show($"PRODUCTO { dgProductos[1, posActual].Value} BORRADO");
                     }
                     else
                     {
-                        MessageBox.Show($"FALLA AL BORRAR EL CLIENTE { dgProductos[1, posActual].Value}, " + "¡¡EL CLIENTE TIENE FACTURAS ASOCIADAS!!");
+                        MessageBox.Show($"FALLA AL BORRAR EL PRODUCTO { dgProductos[1, posActual].Value}, " + "¡¡EL PRODUCTO TIENE FACTURAS ASOCIADAS!!");
                     }
                 }
             }

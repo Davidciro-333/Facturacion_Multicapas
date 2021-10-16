@@ -54,17 +54,17 @@ namespace Plantilla_Sistema_facturacion_2021_2
             {
 
                 int posActual = dgBuscarEmpleado.CurrentRow.Index;
-                if (MessageBox.Show($"¿Quieres borrar el cliente { dgBuscarEmpleado[1, posActual].Value}?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"¿Quieres borrar el empleado { dgBuscarEmpleado[1, posActual].Value}?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     empleado.C_IdEmpleado = Convert.ToInt32(dgBuscarEmpleado[0, posActual].Value.ToString());
                     string Mensaje = empleado.EliminarEmpleado();
                     if (Mensaje == "Los datos fueron actualizados")
                     {
-                        MessageBox.Show($"CLIENTE { dgBuscarEmpleado[1, posActual].Value} BORRADO");
+                        MessageBox.Show($"EMPLEADO { dgBuscarEmpleado[1, posActual].Value} BORRADO");
                     }
                     else
                     {
-                        MessageBox.Show($"FALLA AL BORRAR EL CLIENTE { dgBuscarEmpleado[1, posActual].Value}, " + "¡¡EL CLIENTE TIENE FACTURAS ASOCIADAS!!");
+                        MessageBox.Show($"FALLA AL BORRAR EL EMPLEADO { dgBuscarEmpleado[1, posActual].Value}, " + "¡¡EL EMPLEADO TIENE FACTURAS ASOCIADAS!!");
                     }
                 }
             }

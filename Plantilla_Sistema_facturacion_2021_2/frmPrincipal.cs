@@ -15,13 +15,8 @@ namespace Plantilla_Sistema_facturacion_2021_2
     public partial class frmPrincipal : MaterialForm
     {
         frmClientesV2 clientesV2 = new frmClientesV2();
-        frmProductos productos = new frmProductos();
-        frmCategorias categorias = new frmCategorias();
         frmFacturas facturas = new frmFacturas();
-        frmInformeFactura informeFactura = new frmInformeFactura();
         frmEmpleados empleados = new frmEmpleados();
-        frmRoles roles = new frmRoles();
-        frmSeguridad seguridad = new frmSeguridad();
 
         public frmPrincipal()
         {
@@ -43,42 +38,49 @@ namespace Plantilla_Sistema_facturacion_2021_2
         {
             /*frmClientes clientes = new frmClientes();
             AbrirForm(clientes);*/
-
+            frmClientesV2 clientesV2 = new frmClientesV2();
             AbrirForm(clientesV2);
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            frmProductos productos = new frmProductos();
             AbrirForm(productos);
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
+            frmCategorias categorias = new frmCategorias();
             AbrirForm(categorias);
         }
 
         private void btnFacturas_Click(object sender, EventArgs e)
         {
+            frmFacturas facturas = new frmFacturas();
             AbrirForm(facturas);
         }
 
         private void btnInformes_Click(object sender, EventArgs e)
         {
+            frmInformeFactura informeFactura = new frmInformeFactura();
             AbrirForm(informeFactura);
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
+            frmEmpleados empleados = new frmEmpleados();
             AbrirForm(empleados);
         }
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
+            frmRoles roles = new frmRoles();
             AbrirForm(roles);
         }
 
         private void btnSeguridad_Click(object sender, EventArgs e)
         {
+            frmSeguridad seguridad = new frmSeguridad();
             AbrirForm(seguridad);
         }
 
@@ -92,16 +94,23 @@ namespace Plantilla_Sistema_facturacion_2021_2
         {
             switch (tbpMenu.SelectedIndex)
             {
+                case 0:
+                    this.pnlContenedor.Visible = false;
+                    break;
                 case 1:
+                    this.pnlContenedor.Visible = true;
                     AbrirForm(clientesV2);
                     break;
                 case 2:
+                    this.pnlContenedor.Visible = true;
                     AbrirForm(facturas);
                     break;
                 case 3:
+                    this.pnlContenedor.Visible = true;
                     AbrirForm(empleados);
                     break;
                 case 4:
+                    this.pnlContenedor.Visible = true;
                     frmAyuda ayuda = new frmAyuda();
                     AbrirForm(ayuda);
                     break;

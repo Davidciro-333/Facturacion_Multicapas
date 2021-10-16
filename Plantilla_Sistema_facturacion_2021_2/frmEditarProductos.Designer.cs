@@ -31,6 +31,8 @@ namespace Plantilla_Sistema_facturacion_2021_2
         {
             this.components = new System.ComponentModel.Container();
             this.gpbDetalles = new System.Windows.Forms.GroupBox();
+            this.txtDetalleProducto = new System.Windows.Forms.TextBox();
+            this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.txtCodReferencia = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPrecioCompra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPrecioVenta = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -43,9 +45,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.MensajeError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtDetalleProducto = new System.Windows.Forms.TextBox();
             this.gpbDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MensajeError)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,22 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.gpbDetalles.Size = new System.Drawing.Size(623, 268);
             this.gpbDetalles.TabIndex = 15;
             this.gpbDetalles.TabStop = false;
+            // 
+            // txtDetalleProducto
+            // 
+            this.txtDetalleProducto.Location = new System.Drawing.Point(351, 135);
+            this.txtDetalleProducto.Multiline = true;
+            this.txtDetalleProducto.Name = "txtDetalleProducto";
+            this.txtDetalleProducto.Size = new System.Drawing.Size(222, 94);
+            this.txtDetalleProducto.TabIndex = 12;
+            // 
+            // txtIdProducto
+            // 
+            this.txtIdProducto.Location = new System.Drawing.Point(15, 13);
+            this.txtIdProducto.Name = "txtIdProducto";
+            this.txtIdProducto.Size = new System.Drawing.Size(29, 20);
+            this.txtIdProducto.TabIndex = 11;
+            this.txtIdProducto.Visible = false;
             // 
             // txtCodReferencia
             // 
@@ -235,24 +251,9 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtIdProducto
-            // 
-            this.txtIdProducto.Location = new System.Drawing.Point(15, 13);
-            this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.Size = new System.Drawing.Size(29, 20);
-            this.txtIdProducto.TabIndex = 11;
-            // 
             // MensajeError
             // 
             this.MensajeError.ContainerControl = this;
-            // 
-            // txtDetalleProducto
-            // 
-            this.txtDetalleProducto.Location = new System.Drawing.Point(351, 135);
-            this.txtDetalleProducto.Multiline = true;
-            this.txtDetalleProducto.Name = "txtDetalleProducto";
-            this.txtDetalleProducto.Size = new System.Drawing.Size(222, 94);
-            this.txtDetalleProducto.TabIndex = 12;
             // 
             // frmEditarProductos
             // 
@@ -264,6 +265,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.gpbDetalles);
             this.Name = "frmEditarProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditarProductos";
             this.Load += new System.EventHandler(this.frmEditarProductos_Load);
             this.gpbDetalles.ResumeLayout(false);

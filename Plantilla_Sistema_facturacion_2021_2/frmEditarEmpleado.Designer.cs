@@ -295,6 +295,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.Controls.Add(this.gbpEmpleadosDetalles);
             this.Controls.Add(this.lblEditarEmpleado);
             this.Name = "frmEditarEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditarEmpleado";
             this.Load += new System.EventHandler(this.frmEditarEmpleado_Load);
             this.gbpEmpleadosDetalles.ResumeLayout(false);

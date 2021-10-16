@@ -30,19 +30,14 @@ namespace Plantilla_Sistema_facturacion_2021_2
         private void InitializeComponent()
         {
             this.lblTituloRoles = new MaterialSkin.Controls.MaterialLabel();
-            this.gbpRol = new System.Windows.Forms.GroupBox();
-            this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblDescripcionRol = new MaterialSkin.Controls.MaterialLabel();
-            this.txtDescripcionRol = new System.Windows.Forms.TextBox();
             this.gpbBuscarRol = new System.Windows.Forms.GroupBox();
+            this.dgRol = new System.Windows.Forms.DataGridView();
             this.btnBuscarRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtBuscarRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.dgRol = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.gbpRol.SuspendLayout();
             this.gpbBuscarRol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRol)).BeginInit();
             this.SuspendLayout();
@@ -60,53 +55,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.lblTituloRoles.TabIndex = 2;
             this.lblTituloRoles.Text = "ROL DE EMPLEADOS";
             // 
-            // gbpRol
-            // 
-            this.gbpRol.Controls.Add(this.txtDescripcionRol);
-            this.gbpRol.Controls.Add(this.lblDescripcionRol);
-            this.gbpRol.Controls.Add(this.txtNombreRol);
-            this.gbpRol.Location = new System.Drawing.Point(70, 75);
-            this.gbpRol.Name = "gbpRol";
-            this.gbpRol.Size = new System.Drawing.Size(623, 268);
-            this.gbpRol.TabIndex = 3;
-            this.gbpRol.TabStop = false;
-            // 
-            // txtNombreRol
-            // 
-            this.txtNombreRol.Depth = 0;
-            this.txtNombreRol.Hint = "Nombre rol";
-            this.txtNombreRol.Location = new System.Drawing.Point(15, 25);
-            this.txtNombreRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtNombreRol.Name = "txtNombreRol";
-            this.txtNombreRol.PasswordChar = '\0';
-            this.txtNombreRol.SelectedText = "";
-            this.txtNombreRol.SelectionLength = 0;
-            this.txtNombreRol.SelectionStart = 0;
-            this.txtNombreRol.Size = new System.Drawing.Size(217, 23);
-            this.txtNombreRol.TabIndex = 1;
-            this.txtNombreRol.UseSystemPasswordChar = false;
-            // 
-            // lblDescripcionRol
-            // 
-            this.lblDescripcionRol.AutoSize = true;
-            this.lblDescripcionRol.Depth = 0;
-            this.lblDescripcionRol.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblDescripcionRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDescripcionRol.Location = new System.Drawing.Point(15, 83);
-            this.lblDescripcionRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblDescripcionRol.Name = "lblDescripcionRol";
-            this.lblDescripcionRol.Size = new System.Drawing.Size(176, 19);
-            this.lblDescripcionRol.TabIndex = 2;
-            this.lblDescripcionRol.Text = "Descripción detallada rol";
-            // 
-            // txtDescripcionRol
-            // 
-            this.txtDescripcionRol.Location = new System.Drawing.Point(19, 106);
-            this.txtDescripcionRol.Multiline = true;
-            this.txtDescripcionRol.Name = "txtDescripcionRol";
-            this.txtDescripcionRol.Size = new System.Drawing.Size(350, 100);
-            this.txtDescripcionRol.TabIndex = 3;
-            // 
             // gpbBuscarRol
             // 
             this.gpbBuscarRol.Controls.Add(this.dgRol);
@@ -117,6 +65,14 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.gpbBuscarRol.Size = new System.Drawing.Size(623, 246);
             this.gpbBuscarRol.TabIndex = 4;
             this.gpbBuscarRol.TabStop = false;
+            // 
+            // dgRol
+            // 
+            this.dgRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgRol.Location = new System.Drawing.Point(15, 50);
+            this.dgRol.Name = "dgRol";
+            this.dgRol.Size = new System.Drawing.Size(563, 150);
+            this.dgRol.TabIndex = 17;
             // 
             // btnBuscarRol
             // 
@@ -144,14 +100,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtBuscarRol.Size = new System.Drawing.Size(479, 23);
             this.txtBuscarRol.TabIndex = 15;
             this.txtBuscarRol.UseSystemPasswordChar = false;
-            // 
-            // dgRol
-            // 
-            this.dgRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgRol.Location = new System.Drawing.Point(15, 50);
-            this.dgRol.Name = "dgRol";
-            this.dgRol.Size = new System.Drawing.Size(563, 150);
-            this.dgRol.TabIndex = 17;
             // 
             // btnEliminar
             // 
@@ -212,13 +160,10 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.gpbBuscarRol);
-            this.Controls.Add(this.gbpRol);
             this.Controls.Add(this.lblTituloRoles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRoles";
             this.Text = "frmRoles";
-            this.gbpRol.ResumeLayout(false);
-            this.gbpRol.PerformLayout();
             this.gpbBuscarRol.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgRol)).EndInit();
             this.ResumeLayout(false);
@@ -229,10 +174,6 @@ namespace Plantilla_Sistema_facturacion_2021_2
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel lblTituloRoles;
-        private System.Windows.Forms.GroupBox gbpRol;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRol;
-        private MaterialSkin.Controls.MaterialLabel lblDescripcionRol;
-        private System.Windows.Forms.TextBox txtDescripcionRol;
         private System.Windows.Forms.GroupBox gpbBuscarRol;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarRol;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarRol;

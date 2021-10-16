@@ -125,6 +125,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // LLENAMOS EL COMBOBOX CON LOS DATOS DE SEGURIDAD DE LOS EMPLEADOS
             try
             {
+                cmbRolEmpleado.DataSource = null;
                 cmbRolEmpleado.Items.Clear();
                 DataTable dt = empleado.ConsultarEmpleado("TBLROLES", filtro);
                 cmbRolEmpleado.DataSource = dt;

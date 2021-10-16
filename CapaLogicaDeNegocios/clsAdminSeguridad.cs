@@ -59,7 +59,7 @@ namespace CapaLogicaDeNegocios
             return Mensaje;
         }
 
-        public DataTable ConsultarSeguridad(string filtro)
+        public DataTable ConsultarSeguridad(string tabla,string filtro)
         {
             string Sentencia;
 
@@ -67,7 +67,7 @@ namespace CapaLogicaDeNegocios
             {
                 if (filtro == string.Empty)
                 {
-                    Sentencia = "SELECT * FROM TBLSEGURIDAD";
+                    Sentencia = $"SELECT * FROM {tabla}";
                 }
                 else
                 {

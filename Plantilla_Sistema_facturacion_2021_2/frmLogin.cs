@@ -26,7 +26,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text != string.Empty || txtPassword.Text != string.Empty)
+            if (txtUsuario.Text != string.Empty && txtPassword.Text != string.Empty)
             {
                 clsValidar.C_StrUsuario = txtUsuario.Text;
                 clsValidar.C_StrClave = txtPassword.Text;
@@ -53,6 +53,19 @@ namespace Plantilla_Sistema_facturacion_2021_2
                 txtUsuario.Focus();
             }
 
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnValidar_Click(sender, e);  //llamar el metodo
+            }
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtPassword_KeyPress(sender, e);  //llamar el metodo
         }
     }
 }

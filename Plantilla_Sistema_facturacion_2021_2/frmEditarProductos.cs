@@ -168,6 +168,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // LLENAMOS EL COMBOBOX CON LOS DATOS DE SEGURIDAD DE LOS EMPLEADOS
             try
             {
+                cmbCategoria.DataSource = null;
                 cmbCategoria.Items.Clear();
                 DataTable dt = productos.ConsultarProducto("TBLCATEGORIA_PROD", filtro);
                 cmbCategoria.DataSource = dt;

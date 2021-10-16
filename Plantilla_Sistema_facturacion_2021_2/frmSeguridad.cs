@@ -53,10 +53,11 @@ namespace Plantilla_Sistema_facturacion_2021_2
             // LLENAMOS EL COMBOBOX CON LOS DATOS DE SEGURIDAD DE LOS EMPLEADOS
             try
             {
+                cmbEmpleado.DataSource = null;
                 cmbEmpleado.Items.Clear();
-                DataTable dt = seguridad.ConsultarSeguridad(filtro);
+                DataTable dt = seguridad.ConsultarSeguridad("TBLEMPLEADO", filtro);
                 cmbEmpleado.DataSource = dt;
-                cmbEmpleado.DisplayMember = "StrUsuario";
+                cmbEmpleado.DisplayMember = "strNombre";
                 cmbEmpleado.ValueMember = "IdEmpleado";
             }
             catch (Exception ex)
@@ -67,10 +68,10 @@ namespace Plantilla_Sistema_facturacion_2021_2
 
         private void Consultar()
         {
-            string filtro = cmbEmpleado.SelectedValue.ToString();
             try
             {
-                DataTable dt = seguridad.ConsultarSeguridad(filtro);
+                string filtro = cmbEmpleado.SelectedValue.ToString();
+                DataTable dt = seguridad.ConsultarSeguridad("TBLSEGURIDAD", filtro);
                 if (dt.Rows.Count > 0)
                 {
                     txtUsuario.Text = dt.Rows[0]["StrUsuario"].ToString();
@@ -119,18 +120,18 @@ namespace Plantilla_Sistema_facturacion_2021_2
             string Mensaje = "";
             try
             {
-                if (MessageBox.Show($"¿Quieres borrar el cliente { cmbEmpleado.Text}?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"¿Quieres borrar el usuario { cmbEmpleado.Text}?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {                
                     seguridad.C_IdEmpleado = Convert.ToInt32(cmbEmpleado.SelectedValue);
                     Mensaje = seguridad.EliminarSeguridad();
 
                     if (Mensaje == "Los datos fueron actualizados")
                     {
-                        MessageBox.Show($"CLIENTE { cmbEmpleado.Text} BORRADO");
+                        MessageBox.Show($"USUARIO { cmbEmpleado.Text} BORRADO");
                     }
                     else
                     {
-                        MessageBox.Show($"FALLA AL BORRAR EL CLIENTE { cmbEmpleado.Text}, " + "¡¡EL CLIENTE TIENE FACTURAS ASOCIADAS!!");
+                        MessageBox.Show($"FALLA AL BORRAR EL USUARIO { cmbEmpleado.Text}, " + "¡¡EL USUARIO TIENE FACTURAS ASOCIADAS!!");
                     }
                 }
             }

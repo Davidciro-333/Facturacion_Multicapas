@@ -88,6 +88,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtUsuario.Size = new System.Drawing.Size(196, 23);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.UseSystemPasswordChar = false;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // txtPassword
             // 
@@ -103,6 +104,7 @@ namespace Plantilla_Sistema_facturacion_2021_2
             this.txtPassword.Size = new System.Drawing.Size(196, 23);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = false;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // btnValidar
             // 
